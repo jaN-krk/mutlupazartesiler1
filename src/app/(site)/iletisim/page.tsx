@@ -5,7 +5,7 @@ import Location from "@/app/components/Contact/OfficeLocation";
 import React from "react";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Contact | SassCandy",
+  title: "İletişim | Mutlu Pazartesiler - Eğitim ve Danışmanlık Hizmetleri",
 };
 
 const page = () => {

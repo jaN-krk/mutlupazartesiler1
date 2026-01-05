@@ -3,7 +3,7 @@ import HeroSub from "@/app/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hizmetlerimiz | SassCandy",
+  title: "Hizmetlerimiz | Mutlu Pazartesiler - Eğitim ve Danışmanlık Hizmetleri",
 };
 
 const page = () => {

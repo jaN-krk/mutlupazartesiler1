@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title:
-    "Blog Grids | Saturn",
+    "Blog | Mutlu Pazartesiler - Eğitim ve Danışmanlık Hizmetleri",
 };
 
 const Blog = () => {
