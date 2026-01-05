@@ -1,17 +1,27 @@
-import { getAllPosts, getPostBySlug } from "@/utils/markdown";
+import { getAllPosts, getPostBySlug, getPostSlugs } from "@/utils/markdown";
 import markdownToHtml from "@/utils/markdownToHtml";
 import { format } from "date-fns";
 import { tr } from 'date-fns/locale/tr';
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const slugs = getPostSlugs();
+  return slugs.map((slug) => ({ slug: slug.replace(/\.mdx$/, "") }));
+}
 
 type Props = {
   params: { slug: string };
 };
 
 export async function generateMetadata({ params }: any) {
+  const { slug } = await Promise.resolve(params || {});
   const posts = getAllPosts(["title", "date", "excerpt", "coverImage", "slug"]);
-  const post = getPostBySlug(params.slug, [
+  const post = getPostBySlug(slug, [
     "title",
     "author",
     "content",
@@ -62,8 +72,9 @@ export async function generateMetadata({ params }: any) {
 }
 
 export default async function Post({ params }: any) {
+  const { slug } = await Promise.resolve(params || {});
   const posts = getAllPosts(["title", "date", "excerpt", "coverImage", "slug"]);
-  const post = getPostBySlug(params.slug, [
+  const post = getPostBySlug(slug, [
     "title",
     "author",
     "authorImage",
@@ -71,6 +82,8 @@ export default async function Post({ params }: any) {
     "coverImage",
     "date",
   ]);
+
+  if (!post) return notFound();
 
   const content = await markdownToHtml(post.content || "");
 

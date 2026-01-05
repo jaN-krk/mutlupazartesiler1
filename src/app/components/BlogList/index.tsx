@@ -12,7 +12,7 @@ const BlogList = ({ blog }: { blog: Blog }) => {
       className="group mb-10 relative"
     >
       <div className="mb-8 overflow-hidden rounded">
-        <Link href={`/blogs/${slug}`} aria-label="blog cover" className="block h-72">
+        <Link href={slug ? `/blogs/${slug}` : '#'} aria-label="blog cover" className="block h-72">
           <Image
             src={coverImage!}
             alt="image"
@@ -27,7 +27,7 @@ const BlogList = ({ blog }: { blog: Blog }) => {
       <div>
         <h3>
           <Link
-            href={`/blogs/${slug}`}
+            href={slug ? `/blogs/${slug}` : '#'}
             className="mb-4 inline-block font-semibold text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary text-xl"
           >
             {title}

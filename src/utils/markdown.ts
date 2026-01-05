@@ -2,16 +2,20 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
-// Blog posts live under src/app/blog (mdx). Use absolute path to avoid case issues in builds
+// Blog MDX files live under src/app/blog; guard against missing dir in prod builds
 const postsDirectory = join(process.cwd(), "src", "app", "blog");
 
 export function getPostSlugs() {
+  if (!fs.existsSync(postsDirectory)) return [];
   return fs.readdirSync(postsDirectory);
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {  
-  const realSlug = slug.replace(/\.mdx$/, "");
+  const safeSlug = typeof slug === "string" ? slug : "";
+  const realSlug = safeSlug.replace(/\.mdx$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.mdx`);
+  if (!realSlug) return null;
+  if (!fs.existsSync(fullPath)) return null;
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -55,6 +59,7 @@ export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
+    .filter(Boolean)
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 
