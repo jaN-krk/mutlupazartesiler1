@@ -2,7 +2,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
-const postsDirectory = join(process.cwd(), "markdown/Blog");
+// Blog posts live under src/app/blog (mdx). Use absolute path to avoid case issues in builds
+const postsDirectory = join(process.cwd(), "src", "app", "blog");
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
