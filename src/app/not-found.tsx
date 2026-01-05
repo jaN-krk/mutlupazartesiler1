@@ -1,20 +1,8 @@
-import NotFound from "@/app/components/NotFound";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "404 Page | Saturn ",
-};
-
-const ErrorPage = () => {
-  const breadcrumbLinks = [
-    { href: "/", text: "Anasayfa" },
-    { href: "javascript:void(0)", text: "404" },
-  ];
+export default function NotFound() {
   return (
-    <>
-      <NotFound />
-    </>
+    <div style={{ padding: 40, textAlign: "center" }}>
+      <h1>404</h1>
+      <p>Sayfa bulunamadı</p>
+    </div>
   );
-};
-
-export default ErrorPage;
+}
