@@ -17,6 +17,7 @@ const ContactInfo = () => {
                 </span>
                 <p className="text-black/50 dark:text-white/50 font-normal text-lg max-w-80 pt-3 pb-7">
                   fulyaengin@mutlupazartesiler.com
+                  cigdemkocak@mutlupazartesiler.com
                 </p>
               </div>
             </div>
@@ -30,7 +31,7 @@ const ContactInfo = () => {
                     Adres
                   </span>
                   <p className="text-black/50 dark:text-white/50 font-normal text-lg max-w-80 pt-3 pb-7">
-                    İstanbul, Türkiye
+                    Zümrütevler Mah. Nish Adalar Sitesi 21. Blok D. 12 Kat -4 Maltepe İSTANBUL
                   </p>
                 </div>
               </div>

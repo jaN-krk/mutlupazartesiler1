@@ -115,13 +115,13 @@ export default async function Post({ params }: any) {
       <section className="dark:bg-darkmode pt-8!">
         <div className="container lg:max-w-xl md:max-w-screen-md mx-auto px-4">
           <div className="grid-cols-3 grid">
-            <div className="z-20 mb-24 max-h-[448px] overflow-hidden rounded col-span-3">
+            <div className="z-20 mb-24 max-h-[600px] overflow-hidden rounded col-span-3">
               <Image
                 src={post.coverImage}
                 alt="image"
                 width={1170}
                 height={766}
-                className="h-full w-full object-cover object-top rounded-3xl"
+                className="h-full w-full object-cover object-mid rounded-3xl"
               />
             </div>
             <div className="lg:col-span-2 col-span-3">
@@ -130,7 +130,7 @@ export default async function Post({ params }: any) {
               </div>
             </div>
             <div className="lg:col-span-1 col-span-3">
-              <div>
+              {/* <div>
                 <div className="mb-8 flex flex-col">
                   <div className="w-full py-12 px-11 bg-white dark:bg-darklight shadow-lg border-b-2 border-lightborder dark:border-darkborder rounded-t-lg">
                     <h2
@@ -207,7 +207,7 @@ export default async function Post({ params }: any) {
                       </div>
                     </div>
                   </div>
-                  {/* <div className="w-full py-12 px-11 bg-white dark:bg-darklight shadow-lg rounded-b-lg">
+                  <div className="w-full py-12 px-11 bg-white dark:bg-darklight shadow-lg rounded-b-lg">
                     <p className="text-3xl font-medium mb-4">Join our Newsletter</p>
                     <input
                       placeholder="Email address "
@@ -216,9 +216,9 @@ export default async function Post({ params }: any) {
                     <button className="w-full py-4 px-9 text-lg font-medium bg-primary hover:bg-orange-600 duration-300 rounded-lg text-white">
                       Subscribe
                     </button>
-                  </div> */}
+                  </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

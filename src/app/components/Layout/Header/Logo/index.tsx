@@ -10,20 +10,20 @@ const Logo: React.FC<HeaderProps> = () => {
       <Image
         src="/images/logo/logo.PNG"
         alt="logo"
-        width={110}
-        height={50}
+        width={200}
+        height={150}
         style={{  height: 'auto' }}
         quality={100}
-        className='dark:hidden md:w-[110px] w-[80px]'
+        className='dark:hidden md:w-[200px] w-[80px]'
       />
       <Image
         src="/images/logo/logo-beyaz.png"
         alt="logo"
-        width={110}
-        height={50}
+        width={200}
+        height={150}
         style={{ height: 'auto' }}
         quality={100}
-        className='dark:block hidden md:w-[110px] w-[80px]'
+        className='dark:block hidden md:w-[200px] w-[80px]'
       />
     </Link>
   );
