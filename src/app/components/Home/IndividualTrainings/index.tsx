@@ -14,11 +14,11 @@ const IndividualTrainings = () => {
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold">1</div>
               <div>
-                <h3 className="text-2xl font-semibold text-black">Eğitmen Yetiştirme Programı</h3>
-                <p className="text-black/70 dark:text-black/70 mt-2">Ya eğitmensiniz ve sunum becerilerinizi güçlendirmek, sahne heyecanıyla başa çıkmak, katılımcıyı daha fazla etkilemek, kendi alanınızda ses getirmek istiyorsunuz… ya da bu alanda kariyer hedefiniz var.</p>
+                <h3 className="text-2xl font-semibold text-black dark:text-white">Eğitmen Yetiştirme Programı</h3>
+                <p className="text-black/70 dark:text-white/70 mt-2">Ya eğitmensiniz ve sunum becerilerinizi güçlendirmek, sahne heyecanıyla başa çıkmak, katılımcıyı daha fazla etkilemek, kendi alanınızda ses getirmek istiyorsunuz… ya da bu alanda kariyer hedefiniz var.</p>
               </div>
             </div>
-            <ul className="mt-4 list-disc list-inside text-black/70 dark:text-black/70 space-y-2">
+            <ul className="mt-4 list-disc list-inside text-black/70 dark:text-white/70 space-y-2">
               <li>Eğitim ihtiyaçlarını tespit etme</li>
               <li>İçerik yazımı ve yapılandırma</li>
               <li>Etkin sunum teknikleri ve uygulama</li>
@@ -31,7 +31,7 @@ const IndividualTrainings = () => {
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold">2</div>
               <div>
-                <h3 className="text-2xl font-semibold text-black">İşe Alım Uzmanlığı / Seçme – Yerleştirme Programı</h3>
+                <h3 className="text-2xl font-semibold text-black dark:text-white">İşe Alım Uzmanlığı / Seçme – Yerleştirme Programı</h3>
                 <p className="text-black/70 dark:text-white/70 mt-2">Bir kuruma bir kişiyi yerleştirmek sadece bir pozisyonu doldurmak değildir; tüm sisteme etki eden bir dokunuş yapmaktır.</p>
               </div>
             </div>
@@ -48,7 +48,7 @@ const IndividualTrainings = () => {
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold">3</div>
               <div>
-                <h3 className="text-2xl font-semibold text-black">Yönetim Becerileri Programı (Bireysel)</h3>
+                <h3 className="text-2xl font-semibold text-black dark:text-white">Yönetim Becerileri Programı (Bireysel)</h3>
                 <p className="text-black/70 dark:text-white/70 mt-2">Sözü geçen, belli bir güç alanına sahip, kendisi de ekibi de ezilmeyen, kriz anında çözülmeyen, az bilgiyle bile doğru karar verebilen daha güçlü bir yönetici olmaya mı ihtiyacınız var?</p>
               </div>
             </div>

@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
                 src="/images/hero/fulya.png"
                 alt="hero Image"
                 width={400}
-                height={300}
+                height={200}
                 // className="w-full h-full"
               />
             </motion.div>

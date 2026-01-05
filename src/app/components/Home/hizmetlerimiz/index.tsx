@@ -44,7 +44,7 @@ const Services = () => {
               Profesyonel Danışmanlık <br /> & Eğitim Hizmetleri
             </h2>
             <Link
-              href="/hizmetler"
+              href="/hizmetlerimiz"
               className="py-1.125 px-2.188 bg-primary rounded-lg hover:bg-orange-600 duration-300 text-white font-semibold"
             >
               Hizmetler
