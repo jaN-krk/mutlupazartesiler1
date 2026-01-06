@@ -10,9 +10,9 @@ const ReferenceLogos = () => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     setIsDark(mediaQuery.matches);
 
-    const handleChange = (e) => setIsDark(e.matches);
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
+    const handleChange = (e: MediaQueryListEvent) => setIsDark(e.matches);
+    mediaQuery.addEventListener("change", handleChange as EventListener);
+    return () => mediaQuery.removeEventListener("change", handleChange as EventListener);
   }, []);
 
   const logos = [
