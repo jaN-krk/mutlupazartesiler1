@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import Hero from "@/app/components/Home/Hero";
+import ReferenceLogos from "@/app/components/Galeri/ReferenceLogos";
 import Hizmetler from "@/app/components/Home/hizmetlerimiz";
 import IndividualTrainings from "@/app/components/Home/IndividualTrainings";
 import CorporateTrainings from "@/app/components/Home/CorporateTrainings";
@@ -15,14 +16,35 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const galleryImages = [
+    "/images/productdoc/mp17.jpg",
+    "/images/productdoc/mp16.jpg",
+    "/images/productdoc/mp15.jpg",
+    "/images/productdoc/mp14.jpg",
+    "/images/productdoc/mp13.jpg",
+    "/images/productdoc/mp12.jpg",
+    "/images/productdoc/mp11.jpg",
+    "/images/productdoc/mp10.jpg",
+    "/images/productdoc/mp9.jpg",
+    "/images/productdoc/mp8.jpg",
+    "/images/productdoc/mp7.jpg",
+    "/images/productdoc/mp6.jpg",
+    "/images/productdoc/mp5.jpeg",
+    "/images/productdoc/mp4.jpeg",
+    "/images/productdoc/mp3.jpg",
+    "/images/productdoc/mp2.jpeg",
+    "/images/productdoc/mp1.jpeg",
+  ];
+
   return (
     <main>
       <Hero />
+      <ReferenceLogos />
       <Hizmetler />
       <IndividualTrainings />
       <CorporateTrainings />
       {/* <Features /> */}
-      <ProductDoc />
+      <ProductDoc images={galleryImages} />
       {/* <Plan /> */}
       <Info />
 

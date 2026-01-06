@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import SingleService from "./SingleService";
@@ -36,19 +35,10 @@ const Services = () => {
         className="container mx-auto lg:max-w-xl md:max-w-screen-md px-4"
       >
         <motion.div {...TopAnimation} className="mb-17">
-          <p className="text-black/50 dark:text-white/50 text-lg lg:text-start text-center">
-            Hizmetlerimiz
-          </p>
           <div className="flex lg:flex-row flex-col lg:gap-0 gap-10 justify-between items-center mt-5">
-            <h2 className="font-semibold md:text-6xl sm:text-40 text-3xl text-black dark:text-white lg:text-start text-center">
-              Profesyonel Danışmanlık <br /> & Eğitim Hizmetleri
+            <h2 className="font-semibold md:text-4xl sm:text-2xl text-xl text-black dark:text-white lg:text-start text-center">
+              Profesyonel Danışmanlık & Eğitim Hizmetleri
             </h2>
-            <Link
-              href="/hizmetlerimiz"
-              className="py-1.125 px-2.188 bg-primary rounded-lg hover:bg-orange-600 duration-300 text-white font-semibold"
-            >
-              Hizmetler
-            </Link>
           </div>
         </motion.div>
         <div className="grid grid-cols-12 gap-6">

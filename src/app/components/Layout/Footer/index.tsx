@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import React, { FC, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,6 +6,8 @@ import { Icon } from "@iconify/react";
 
 const Footer: FC = () => {
   const [services, setServices] = useState<any[]>([])
+  const [email, setEmail] = useState("")
+  const [subscribeMessage, setSubscribeMessage] = useState("")
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,44 +24,44 @@ const Footer: FC = () => {
 
     fetchData()
   }, [])
+
+  const handleSubscribe = (e: React.MouseEvent) => {
+    e.preventDefault()
+    if (email.trim()) {
+      setSubscribeMessage("Kaydınız tamamlanmıştır!")
+      setEmail("")
+      setTimeout(() => setSubscribeMessage(""), 3000)
+    }
+  }
+
   return (
-    <footer className="bg-Dark-primary dark:bg-darklight py-17 pb-6">
+    <footer className="bg-Dark-primary dark:bg-darklight py-12 pb-6 border-t border-white/10">
       <div className="container mx-auto lg:max-w-xl md:max-w-screen-md px-4">
-        <div className="grid grid-cols-12 sm:gap-1.875 gap-5">
+        {/* Logo ve Tanım */}
+        <div className="grid grid-cols-12 gap-8 mb-12">
           <div className="lg:col-span-4 col-span-12">
-            <div className="md:pe-7.5">
-              <Link href="#">
-                <Image
-                  src="/images/logo/logo-beyaz.png"
-                  alt="Logo"
-                  width={200}
-                  height={32}
-                />
-              </Link>
-              <p className="mb-0 font-medium text-lg text-white/50 pt-2.188 pb-1.875">
-                Çalışanlarınızın profesyonel yetkinliklerini artırmak için buradayız.
-              </p>
-              <p className="text-lg font-medium text-white mb-0">
-                Zümrütevler Mah. Nish Adalar Sitesi 21. Blok D. 12 Kat -4 Maltepe İSTANBUL
-              </p>
-              {/* <p className="text-white/50 text-lg font-medium mb-0">
-                İletişim:{" "}
-                <Link href="#" className="text-primary hover:text-orange-600">
-                  0555 555 55 55
-                </Link>
-              </p> */}
-            </div>
+            <Link href="/">
+              <Image
+                src="/images/logo/logo-beyaz.png"
+                alt="Logo"
+                width={140}
+                height={24}
+              />
+            </Link>
+            <p className="text-sm text-white/60 mt-4">
+              Çalışanlarınızın profesyonel yetkinliklerini artırmak için buradayız.
+            </p>
           </div>
+
+          {/* Hizmetler */}
           <div className="lg:col-span-2 sm:col-span-6 col-span-12">
-            <h4 className="text-lg text-white dark:text-white font-medium mb-2.375">
-              Hizmetler
-            </h4>
-            <ul>
-              {services.map((item, index) => (
-                <li key={index} className="pb-1.563">
+            <h4 className="text-sm font-semibold text-white mb-4">Hizmetler</h4>
+            <ul className="space-y-2">
+              {services.slice(0, 4).map((item, index) => (
+                <li key={index}>
                   <Link
-                    href={`/hizmetler/${item.slug}`}
-                    className="text-lg font-medium text-white/50 hover:text-primary"
+                    href={`/hizmetlerimiz/${item.slug}`}
+                    className="text-sm text-white/60 hover:text-primary transition-colors"
                   >
                     {item.title}
                   </Link>
@@ -67,131 +69,89 @@ const Footer: FC = () => {
               ))}
             </ul>
           </div>
+
+          {/* Hızlı Linkler */}
           <div className="lg:col-span-2 sm:col-span-6 col-span-12">
-            <h4 className="text-lg text-white dark:text-white font-medium mb-2.375">
-              Hızlı Linkler
-            </h4>
-            <ul>
-              <li className="pb-1.563">
+            <h4 className="text-sm font-semibold text-white mb-4">Bağlantılar</h4>
+            <ul className="space-y-2">
+              <li>
                 <Link
-                  href="/galeri"
-                  className="text-lg font-medium text-white/50 hover:text-primary"
+                  href="/portfolio"
+                  className="text-sm text-white/60 hover:text-primary transition-colors"
                 >
                   Galeri
                 </Link>
               </li>
-              <li className="pb-1.563">
-                <Link
-                  href="/pricing"
-                  className="text-lg font-medium text-white/50 hover:text-primary"
-                >
-                  {/* Pricing
-                </Link>
-              </li>
-              <li className="pb-1.563">
+              <li>
                 <Link
                   href="/blogs"
-                  className="text-lg font-medium text-white/50 hover:text-primary"
-                > */}
+                  className="text-sm text-white/60 hover:text-primary transition-colors"
+                >
                   Blog
                 </Link>
               </li>
-              <li className="pb-1.563">
+              <li>
                 <Link
                   href="/iletisim"
-                  className="text-lg font-medium text-white/50 hover:text-primary"
+                  className="text-sm text-white/60 hover:text-primary transition-colors"
                 >
                   İletişim
                 </Link>
               </li>
             </ul>
           </div>
-          <div className="lg:col-span-4 md:col-span-7 col-span-12">
-            <h4 className="text-lg text-white dark:text-white font-medium sm:mb-2.375 mb-6">
-              Yeni Videolar
-            </h4>
-            <p className="text-lg text-white/50 font-medium mb-4">
-              Yeni Videolardan Haberdar Ol
+
+          {/* Email Subscription */}
+          <div className="lg:col-span-4 col-span-12">
+            <h4 className="text-sm font-semibold text-white mb-4">Haber Bülteni</h4>
+            <p className="text-sm text-white/60 mb-4">
+              Yeni videolardan haberdar ol
             </p>
-            <div className="flex sm:flex-nowrap flex-wrap items-center gap-2">
+            <div className="flex flex-col gap-2">
               <input
                 type="email"
-                name="Email"
-                id="email"
-                placeholder="E-posta Adresiniz"
-                className="text-base font-medium py-4 px-5 !rounded-lg dark:text-white dark:bg-darkmode h-full border border-border_color focus:border-primary dark:border-border_color dark:focus:border-primary"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="E-posta adresiniz"
+                className="text-sm py-3 px-4 rounded-lg bg-white text-gray-900 dark:bg-white/10 dark:text-white border border-gray-300 dark:border-white/20 focus:border-primary dark:focus:border-primary focus:outline-none transition-colors placeholder:text-gray-500 dark:placeholder:text-white/50"
               />
-              <Link
-                href="/contact"
-                className="py-4 px-2.188 bg-primary text-white hover:bg-orange-600 rounded-lg duration-500 sm:w-fit w-full"
+              <button
+                onClick={handleSubscribe}
+                className="py-3 px-4 bg-primary text-white text-sm font-medium rounded-lg hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors"
               >
-                Gönder
-              </Link>
+                Abone Ol
+              </button>
+              {subscribeMessage && (
+                <p className="text-sm text-green-500 dark:text-green-400 text-center animate-pulse font-medium">
+                  {subscribeMessage}
+                </p>
+              )}
             </div>
           </div>
         </div>
-        <div className="flex md:flex-nowrap flex-wrap gap-6 items-center justify-between sm:pt-17 pt-10">
-          <p className="text-lg font-medium text-white/50 ">
-            2025 - Tüm Hakları Saklıdır | Mutlu Pazartesiler{" "}
-            <Link
-              href="#"
-              className="hover:text-primary"
-            >
 
-            </Link>
+        {/* Footer Bottom */}
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <p className="text-sm text-white/50">
+             2025 Mutlu Pazartesiler. Tüm Hakları Saklıdır.
           </p>
-          <div className="flex gap-6 items-center">
-           
-      
-<Link
+          <div className="flex gap-4">
+            <a
               href="https://www.instagram.com/mutlu.pazartesiler/"
-              className="p-2 border-2 bg-transparent border-primary rounded-full group hover:bg-primary hover:border-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-primary transition-colors"
             >
-              {/* <Icon
-                icon="jam:google-plus"
-                width="24"
-                height="24"
-                className="text-primary group-hover:text-white"
-              />
-            </Link>
-            <Link
-              href="#"
-              className="p-2 border-2 bg-transparent border-primary rounded-full group hover:bg-primary hover:border-primary"
-            > */}
-              <Icon
-                icon="typcn:social-instagram"
-                width="24"
-                height="24"
-                className="text-primary group-hover:text-white"
-              />
-            </Link>
-
-
-
-
-
-            <Link
+              <Icon icon="typcn:social-instagram" width="20" height="20" />
+            </a>
+            <a
               href="https://www.linkedin.com/company/mutlupazartesiler/posts/?feedView=all"
-              className="p-2 border-2 bg-transparent border-primary rounded-full group hover:bg-primary hover:border-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-primary transition-colors"
             >
-              {/* <Icon
-                icon="jam:google-plus"
-                width="24"
-                height="24"
-                className="text-primary group-hover:text-white"
-              />
-            </Link>
-            <Link
-              href="#"
-              className="p-2 border-2 bg-transparent border-primary rounded-full group hover:bg-primary hover:border-primary"
-            > */}
-              <Icon
-                icon="typcn:social-linkedin"
-                width="24"
-                height="24"
-                className="text-primary group-hover:text-white"
-              />
-            </Link>
+              <Icon icon="typcn:social-linkedin" width="20" height="20" />
+            </a>
           </div>
         </div>
       </div>

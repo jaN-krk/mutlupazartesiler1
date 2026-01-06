@@ -1,0 +1,214 @@
+﻿.referenceSection {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.referenceSection[data-theme="dark"] {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #ffffff 100%);
+}
+
+.referenceSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgb(255, 255, 255) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgb(255, 255, 255) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #404040 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.referenceSection[data-theme="dark"] .header h2 {
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p {
+  font-size: 17px;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.referenceSection[data-theme="dark"] .header p {
+  color: #a0a0a0;
+}
+
+.logosWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 32px rgb(255, 255, 255);
+  border: 1px solid rgba(238, 123, 17, 0.1);
+}
+
+.referenceSection[data-theme="dark"] .logosWrapper {
+  background: #ffffff;
+  box-shadow: 0 8px 32px rgba(29, 28, 28, 0.171);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.logosTrack {
+  display: flex;
+  gap: 50px;
+  padding: 50px 30px;
+  animation: scroll 35s linear infinite;
+  width: fit-content;
+}
+
+.logosTrack:hover {
+  animation-play-state: paused;
+}
+
+.logoItem {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 90px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.referenceSection[data-theme="dark"] .logoItem {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.logoItem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(238, 123, 17, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.logoItem:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(238, 123, 17, 0.15);
+  border-color: rgba(238, 123, 17, 0.3);
+}
+
+.referenceSection[data-theme="dark"] .logoItem:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  box-shadow: 0 12px 32px rgba(238, 123, 17, 0.25);
+  border-color: rgba(238, 123, 17, 0.4);
+}
+
+.logoItem:hover::before {
+  opacity: 1;
+}
+
+.logoItem img {
+  max-width: 90%;
+  max-height: 85%;
+  object-fit: contain;
+  filter: grayscale(40%);
+  transition: filter 0.4s ease;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.logoItem:hover img {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 25px));
+  }
+}
+
+@media (max-width: 768px) {
+  .referenceSection {
+    padding: 60px 15px;
+  }
+
+  .header h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .header p {
+    font-size: 15px;
+  }
+
+  .logosTrack {
+    gap: 35px;
+    padding: 35px 20px;
+    animation: scroll 28s linear infinite;
+  }
+
+  .logoItem {
+    width: 140px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .referenceSection {
+    padding: 40px 10px;
+  }
+
+  .header h2 {
+    font-size: 22px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  .logosTrack {
+    gap: 25px;
+    padding: 25px 15px;
+    animation: scroll 22s linear infinite;
+  }
+
+  .logoItem {
+    width: 120px;
+    height: 70px;
+  }
+}
