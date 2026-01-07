@@ -1,4 +1,3 @@
-import HizmetlerComponent from "@/app/components/Home/hizmetlerimiz";
 import HeroSub from "@/app/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
 
@@ -15,10 +14,10 @@ const page = () => {
     <>
       <HeroSub
         title="Hizmetlerimiz"
-        description="Hizmetlerimizle işletmenizi bir adım öne taşımanıza yardımcı oluyoruz."
+        description="Bu bölüm kaldırılmıştır. Kurumsal ve Bireysel eğitimler sayfalarımızdan güncel içeriklere ulaşabilirsiniz."
         breadcrumbLinks={breadcrumbLinks}
       />
-      <HizmetlerComponent />
+      {/* Hizmetler grid kaldırıldı */}
     </>
   );
 };

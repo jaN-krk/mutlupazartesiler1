@@ -16,7 +16,6 @@ const PortfolioPage = () => {
     "/images/productdoc/mp13.jpg",
     "/images/productdoc/mp12.jpg",
     "/images/productdoc/mp11.jpg",
-    "/images/productdoc/mp10.jpg",
     "/images/productdoc/mp9.jpg",
     "/images/productdoc/mp8.jpg",
     "/images/productdoc/mp7.jpg",
@@ -36,7 +35,7 @@ const PortfolioPage = () => {
     <>
       <HeroSub
         title="Fotoğraf Galerisi"
-        description="Projelerimizden kareler ve referanslarımız."
+        description="Projelerimizden kareler"
         breadcrumbLinks={breadcrumbLinks}
         titleClassName="md:text-5xl text-3xl"
       />

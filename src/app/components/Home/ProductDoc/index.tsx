@@ -44,7 +44,6 @@ const ProductDoc = ({ hideButton = false, hideHeader = false, hideDocs = false, 
       "/images/productdoc/mp13.jpg",
       "/images/productdoc/mp12.jpg",
       "/images/productdoc/mp11.jpg",
-      "/images/productdoc/mp10.jpg",
       "/images/productdoc/mp9.jpg",
       "/images/productdoc/mp8.jpg",
       "/images/productdoc/mp7.jpg",
@@ -67,12 +66,42 @@ const ProductDoc = ({ hideButton = false, hideHeader = false, hideDocs = false, 
     return defaultImages;
   }, [images, Portfolio, defaultImages]);
 
+  const NextArrow = (props: any) => {
+    const { className, style, onClick } = props;
+    return (
+      <button
+        aria-label="Sonraki"
+        className={`${className} !absolute !top-1/2 !-translate-y-1/2 !right-0 md:!right-2 !translate-x-full !z-10 !w-9 !h-9 md:!w-10 md:!h-10 !rounded-full !bg-primary/90 hover:!bg-orange-600 !flex !items-center !justify-center shadow-lg`}
+        style={style}
+        onClick={onClick}
+      >
+        <Icon icon="solar:alt-arrow-right-linear" width={20} height={20} className="text-white" />
+      </button>
+    );
+  };
+
+  const PrevArrow = (props: any) => {
+    const { className, style, onClick } = props;
+    return (
+      <button
+        aria-label="Önceki"
+        className={`${className} !absolute !top-1/2 !-translate-y-1/2 !left-0 md:!left-2 !-translate-x-full !z-10 !w-9 !h-9 md:!w-10 md:!h-10 !rounded-full !bg-primary/90 hover:!bg-orange-600 !flex !items-center !justify-center shadow-lg`}
+        style={style}
+        onClick={onClick}
+      >
+        <Icon icon="solar:alt-arrow-left-linear" width={20} height={20} className="text-white" />
+      </button>
+    );
+  };
+
   const sliderSettings = useMemo(
     () => ({
       autoplay: true,
       autoplaySpeed: 2500,
-      dots: true,
-      arrows: false,
+      dots: false,
+      arrows: true,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
       infinite: true,
       pauseOnHover: true,
       slidesToShow: 3,

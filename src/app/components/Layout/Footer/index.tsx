@@ -5,24 +5,11 @@ import Image from "next/image";
 import { Icon } from "@iconify/react";
 
 const Footer: FC = () => {
-  const [services, setServices] = useState<any[]>([])
   const [email, setEmail] = useState("")
   const [subscribeMessage, setSubscribeMessage] = useState("")
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/service')
-        if (!res.ok) throw new Error('Failed to fetch')
-
-        const data = await res.json()
-        setServices(data.ServicesData || [])
-      } catch (error) {
-        console.error('Error fetching services:', error)
-      }
-    }
-
-    fetchData()
+    // Footer no longer fetches Hizmetler links
   }, [])
 
   const handleSubscribe = (e: React.MouseEvent) => {
@@ -57,21 +44,27 @@ const Footer: FC = () => {
           <div className="lg:col-span-2 sm:col-span-6 col-span-12">
             <h4 className="text-sm font-semibold text-white mb-4">Hizmetler</h4>
             <ul className="space-y-2">
-              {services.slice(0, 4).map((item, index) => (
-                <li key={index}>
-                  <Link
-                    href={`/hizmetlerimiz/${item.slug}`}
-                    className="text-sm text-white/60 hover:text-primary transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/#kurumsal-egitimler"
+                  className="text-sm text-white/60 hover:text-primary transition-colors"
+                >
+                  Kurumsal Eğitimler
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#bireysel-egitimler"
+                  className="text-sm text-white/60 hover:text-primary transition-colors"
+                >
+                  Bireysel Eğitimler
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Hızlı Linkler */}
-          <div className="lg:col-span-2 sm:col-span-6 col-span-12">
+            <div className="lg:col-span-2 sm:col-span-6 col-span-12">
             <h4 className="text-sm font-semibold text-white mb-4">Bağlantılar</h4>
             <ul className="space-y-2">
               <li>

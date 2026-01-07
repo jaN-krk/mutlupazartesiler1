@@ -133,6 +133,20 @@ section {
   @apply sm:py-16 py-8;
 }
 
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide default slick arrow icons to prevent double arrows */
+.slick-prev:before,
+.slick-next:before,
+.slick-prev:after,
+.slick-next:after {
+  content: none !important;
+  display: none !important;
+}
+
 
 
 /* Generic iframe responsive fallback */

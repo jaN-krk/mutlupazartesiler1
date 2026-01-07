@@ -2,9 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 import Hero from "@/app/components/Home/Hero";
 import ReferenceLogos from "@/app/components/Galeri/ReferenceLogos";
-import Hizmetler from "@/app/components/Home/hizmetlerimiz";
 import IndividualTrainings from "@/app/components/Home/IndividualTrainings";
 import CorporateTrainings from "@/app/components/Home/CorporateTrainings";
+import TrainingOverview from "@/app/components/Home/TrainingOverview";
 // import Features from "@/app/components/Home/Features";
 import ProductDoc from "@/app/components/Home/ProductDoc";
 // import Plan from "@/app/components/Home/Plans";
@@ -24,7 +24,6 @@ export default function Home() {
     "/images/productdoc/mp13.jpg",
     "/images/productdoc/mp12.jpg",
     "/images/productdoc/mp11.jpg",
-    "/images/productdoc/mp10.jpg",
     "/images/productdoc/mp9.jpg",
     "/images/productdoc/mp8.jpg",
     "/images/productdoc/mp7.jpg",
@@ -40,11 +39,12 @@ export default function Home() {
     <main>
       <Hero />
       <ReferenceLogos />
-      <Hizmetler />
-      <IndividualTrainings />
+      {/* Hizmetler bölümü talep üzerine kaldırıldı */}
+      <TrainingOverview />
       <CorporateTrainings />
+      <IndividualTrainings />
       {/* <Features /> */}
-      <ProductDoc images={galleryImages} />
+      <ProductDoc hideHeader hideDocs images={galleryImages} />
       {/* <Plan /> */}
       <Info />
 

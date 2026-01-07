@@ -1,6 +1,6 @@
 const IndividualTrainings = () => {
   return (
-    <section className="py-16">
+    <section id="bireysel-egitimler" className="py-16">
       <div className="container mx-auto lg:max-w-6xl md:max-w-screen-md px-4">
         <div className="mb-8 text-center p-6 border-2 border-primary rounded-2xl bg-gradient-to-r from-primary/5 to-orange-500/5 dark:from-primary/10 dark:to-orange-500/10">
           <h2 className="font-semibold md:text-4xl sm:text-3xl text-2xl text-black dark:text-white">BİREYSEL EĞİTİMLER</h2>

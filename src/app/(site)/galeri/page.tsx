@@ -17,7 +17,6 @@ const page = () => {
     "/images/productdoc/mp13.jpg",
     "/images/productdoc/mp12.jpg",
     "/images/productdoc/mp11.jpg",
-    "/images/productdoc/mp10.jpg",
     "/images/productdoc/mp9.jpg",
     "/images/productdoc/mp8.jpg",
     "/images/productdoc/mp7.jpg",

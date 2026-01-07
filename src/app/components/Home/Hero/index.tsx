@@ -42,8 +42,8 @@ const Hero: React.FC = () => {
               <p className="text-lg font-medium text-black/50 dark:text-white/50 sm:py-1.875 py-5">
                 Mutlupazartesiler.com’a hoş geldiniz eğitim ve danışmanlık alanında kendinizi geliştirmek, liderlik potansiyelinizi açığa çıkarmak ve her pazartesiye pozitif enerjiyle başlamak isteyenler için buradayız.
               </p>
-              <Link href="/hizmetlerimiz" className="sm:px-2.188 px-4 sm:py-1.125 py-2 rounded-lg text-base hover:cursor-pointer font-semibold bg-primary text-white hover:bg-orange-600 duration-500 inline-block sm:mb-0 mb-4">
-                Hizmetler
+              <Link href="/iletisim" className="sm:px-2.188 px-4 sm:py-1.125 py-2 rounded-lg text-base hover:cursor-pointer font-semibold bg-primary text-white hover:bg-orange-600 duration-500 inline-block sm:mb-0 mb-4">
+                İletişim
               </Link>
             </motion.div>
           </div>
