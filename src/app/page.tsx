@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const galleryImages = [
+    "/images/productdoc/mp2.jpeg",
     "/images/productdoc/mp17.jpg",
     "/images/productdoc/mp16.jpg",
     "/images/productdoc/mp15.jpg",
@@ -25,13 +26,12 @@ export default function Home() {
     "/images/productdoc/mp12.jpg",
     "/images/productdoc/mp11.jpg",
     "/images/productdoc/mp9.jpg",
-    "/images/productdoc/mp8.jpg",
-    "/images/productdoc/mp7.jpg",
     "/images/productdoc/mp6.jpg",
     "/images/productdoc/mp5.jpeg",
     "/images/productdoc/mp4.jpeg",
+    "/images/productdoc/mp8.jpg",
     "/images/productdoc/mp3.jpg",
-    "/images/productdoc/mp2.jpeg",
+    "/images/productdoc/mp7.jpg",
     "/images/productdoc/mp1.jpeg",
   ];
 

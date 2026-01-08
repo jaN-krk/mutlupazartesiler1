@@ -2,7 +2,7 @@ const IndividualTrainings = () => {
   return (
     <section id="bireysel-egitimler" className="py-16">
       <div className="container mx-auto lg:max-w-6xl md:max-w-screen-md px-4">
-        <div className="mb-8 text-center p-6 border-2 border-primary rounded-2xl bg-gradient-to-r from-primary/5 to-orange-500/5 dark:from-primary/10 dark:to-orange-500/10">
+        <div className="mb-8 text-center p-6 border-2 border-primary rounded-2xl bg-gradient-to-r from-primary/5 to-orange-500/5 dark:from-primary/20 dark:to-orange-500/20">
           <h2 className="font-semibold md:text-4xl sm:text-3xl text-2xl text-black dark:text-white">BİREYSEL EĞİTİMLER</h2>
           <p className="mt-3 text-black/60 dark:text-white/60 max-w-5xl mx-auto">
             Bireysel eğitim ihtiyaçlarınız için 30 yıllık tecrübemizle yanınızdayız! “Bu çağ bilgi çağı ve ben kendime yatırım yapmak istiyorum” diyorsanız, tam size göre hazırlanan eğitim çözümlerimize göz atabilirsiniz.

@@ -6,7 +6,7 @@ const TrainingOverview = () => {
   return (
     <section className="py-16">
       <div className="container mx-auto lg:max-w-6xl md:max-w-screen-md px-4">
-        <h2 className="text-center font-semibold md:text-4xl sm:text-3xl text-2xl text-black dark:text-white mb-8">
+        <h2 className="text-center font-semibold md:text-4xl sm:text-3xl text-2xl text-black dark:!text-white mb-8">
           Profesyonel Danışmanlık ve Eğitim Hizmetleri
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -16,7 +16,9 @@ const TrainingOverview = () => {
               <div className="rounded-full bg-white/20 p-3">
                 <Icon icon="mdi:book-open-page-variant" width="28" height="28" className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold tracking-wide">KURUMSAL EĞİTİMLER</h3>
+              <h3 className="text-2xl font-bold tracking-wide text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
+                KURUMSAL EĞİTİMLER
+              </h3>
             </div>
             <p className="text-white/90 leading-relaxed">
               Eğitimlerimizi, kurumların günlük iş akışında gerçekten işe yarayan, sonuç odaklı çözümlerle tasarlıyoruz. 30 yıllık deneyimimizle ekiplerinizin iletişimden yönetime tüm becerilerini ölçülebilir şekilde güçlendiren, sahaya doğrudan uygulanabilir yöntemler sunuyoruz.
@@ -35,7 +37,9 @@ const TrainingOverview = () => {
               <div className="rounded-full bg-white/20 p-3">
                 <Icon icon="mdi:book-open-page-variant" width="28" height="28" className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold tracking-wide">BİREYSEL EĞİTİMLER</h3>
+              <h3 className="text-2xl font-bold tracking-wide text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
+                BİREYSEL EĞİTİMLER
+              </h3>
             </div>
             <p className="text-white/90 leading-relaxed">
               Bireysel eğitim ihtiyaçlarınız için 30 yıllık tecrübemizle yanınızdayız! “Bu çağ bilgi çağı ve ben kendime yatırım yapmak istiyorum” diyorsanız, tam size göre hazırlanan eğitim çözümlerimize göz atabilirsiniz.
