@@ -18,9 +18,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`flex items-center justify-between w-full py-2 text-black dark:text-white focus:outline-none ${
-            item.href === path ? "!text-primary dark:!text-primary" : null
-          } `}
+          className="flex items-center justify-between w-full py-2 text-black dark:text-white focus:outline-none"
         >
           {item.label}
         </a>
