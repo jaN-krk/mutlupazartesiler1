@@ -13,32 +13,45 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
 
   return (
     <div className="relative w-full">
-      <Link
-        href={item.href}
-        onClick={item.submenu ? handleToggle : undefined}
-        className={`flex items-center justify-between w-full py-2 text-black dark:text-white focus:outline-none ${
-          item.href === path ? "!text-primary dark:!text-primary" : null
-        } `}
-      >
-        {item.label}
-        {item.submenu && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1.5em"
-            height="1.5em"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="m7 10l5 5l5-5"
-            />
-          </svg>
-        )}
-      </Link>
+      {item.external ? (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`flex items-center justify-between w-full py-2 text-black dark:text-white focus:outline-none ${
+            item.href === path ? "!text-primary dark:!text-primary" : null
+          } `}
+        >
+          {item.label}
+        </a>
+      ) : (
+        <Link
+          href={item.href}
+          onClick={item.submenu ? handleToggle : undefined}
+          className={`flex items-center justify-between w-full py-2 text-black dark:text-white focus:outline-none ${
+            item.href === path ? "!text-primary dark:!text-primary" : null
+          } `}
+        >
+          {item.label}
+          {item.submenu && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="m7 10l5 5l5-5"
+              />
+            </svg>
+          )}
+        </Link>
+      )}
       {submenuOpen && item.submenu && (
         <div className="bg-white p-2 w-full">
           {item.submenu.map((subItem, index) => (
