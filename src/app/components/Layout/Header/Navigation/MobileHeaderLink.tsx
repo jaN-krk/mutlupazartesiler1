@@ -27,8 +27,8 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
           href={item.href}
           onClick={item.submenu ? handleToggle : undefined}
           className={`flex items-center justify-between w-full py-2 text-black dark:text-white focus:outline-none ${
-            item.href === path ? "!text-primary dark:!text-primary" : null
-          } `}
+            item.href === path ? "!text-primary dark:!text-primary" : ""
+          }`}
         >
           {item.label}
           {item.submenu && (
