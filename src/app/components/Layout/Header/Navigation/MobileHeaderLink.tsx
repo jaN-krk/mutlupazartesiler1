@@ -20,7 +20,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 w-full py-2 text-black dark:text-white hover:text-primary dark:hover:text-primary focus:outline-none transition-colors"
+          className="flex items-center gap-2 w-full py-2 text-black dark:text-white hover:text-primary dark:hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
           aria-label={item.label}
         >
           {item.icon && <Icon icon={item.icon} width="24" height="24" />}

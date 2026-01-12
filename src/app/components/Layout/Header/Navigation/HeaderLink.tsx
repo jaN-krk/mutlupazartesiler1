@@ -28,8 +28,9 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-base flex items-center font-normal text-black hover:text-primary dark:text-white dark:hover:text-primary transition-colors"
+          className="text-base flex items-center font-normal text-black hover:text-primary dark:text-white dark:hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
           aria-label={item.label}
+          title={item.label}
         >
           {item.icon && <Icon icon={item.icon} width="24" height="24" />}
         </a>
