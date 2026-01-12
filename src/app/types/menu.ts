@@ -7,4 +7,6 @@ export type SubmenuItem = {
     label: string;
     href: string;
     submenu?: SubmenuItem[];
+    icon?: string;
+    external?: boolean;
   };
