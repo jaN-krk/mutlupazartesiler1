@@ -1,22 +1,26 @@
 // src/app/components/Layout/Header/Navigation/menuData.tsx
 
-const menuData = [
+export const headerData = [
   {
-    text: "Home",
-    link: "/",
+    label: "Galeri",
+    href: "/galeri",
   },
   {
-    text: "About",
-    link: "/about",
+    label: "Hizmetlerimiz",
+    href: "/hizmetlerimiz",
   },
   {
-    text: "Instagram",
-    link: "https://www.instagram.com/mutlu.pazartesiler/",
+    label: "Hakkımızda",
+    href: "/hakkimizda",
   },
   {
-    text: "LinkedIn",
-    link: "https://www.linkedin.com/company/mutlupazartesiler/posts/?feedView=all",
+    label: "Blog",
+    href: "/blogs",
+  },
+  {
+    label: "İletişim",
+    href: "/iletisim",
   },
 ];
 
-export default menuData;
+export default headerData;

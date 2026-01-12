@@ -4,6 +4,7 @@ import GoogleProvider from 'next-auth/providers/google';
 import GitHubProvider from 'next-auth/providers/github';
 
 const handler = NextAuth({
+  secret: process.env.NEXTAUTH_SECRET,
   site: process.env.NEXTAUTH_URL || 'http://localhost:3000',
   providers: [
     GoogleProvider({
