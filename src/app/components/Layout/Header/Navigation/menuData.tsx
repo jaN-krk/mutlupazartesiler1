@@ -1,10 +1,7 @@
-import { HeaderItem } from "../../../../types/menu";
-
-export const headerData: HeaderItem[] = [
-  { label: "Galeri", href: "/portfolio" },
-  { label: "Hizmetlerimiz", href: "/hizmetlerimiz" },
-  { label: "Hakkımızda", href: "/hakkimizda" },
-  // { label: "Fiyatlandırma", href: "/pricing" },
-  { label: "Blog", href: "/blogs" },
-  { label: "İletişim", href: "/iletisim" },
+export const menu = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Instagram", href: "https://www.instagram.com/mutlu.pazartesiler/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/mutlupazartesiler/posts/?feedView=all" }
 ];
