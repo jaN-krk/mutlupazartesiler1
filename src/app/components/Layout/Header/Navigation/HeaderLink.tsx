@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HeaderItem } from "../../../../types/menu";
+import { Icon } from "@iconify/react";
 
 const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
@@ -18,6 +19,22 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
   };
 
   const path = usePathname();
+
+  // If external link, render as anchor tag
+  if (item.external) {
+    return (
+      <li className="relative">
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-base flex items-center font-normal text-black hover:text-primary dark:text-white dark:hover:text-primary"
+        >
+          {item.icon && <Icon icon={item.icon} width="20" height="20" />}
+        </a>
+      </li>
+    );
+  }
 
   return (
     <li

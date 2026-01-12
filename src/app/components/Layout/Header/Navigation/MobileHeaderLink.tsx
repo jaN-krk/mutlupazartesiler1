@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { HeaderItem } from "../../../../types/menu";
 import { usePathname } from "next/navigation";
+import { Icon } from "@iconify/react";
 
 const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
@@ -10,6 +11,23 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
     setSubmenuOpen(!submenuOpen);
   };
   const path = usePathname();
+
+  // If external link, render as anchor tag
+  if (item.external) {
+    return (
+      <div className="relative w-full">
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between w-full py-2 text-black dark:text-white focus:outline-none"
+        >
+          {item.icon && <Icon icon={item.icon} width="20" height="20" />}
+          <span className="ml-2">{item.label}</span>
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-full">
