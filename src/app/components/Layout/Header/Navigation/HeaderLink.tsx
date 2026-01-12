@@ -25,35 +25,52 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Link
-        href={item.href}
-        className={`text-base flex font-normal  text-black hover:text-primary dark:text-white dark:hover:text-primary  ${
-          item.href === path ? "!text-primary dark:!text-primary" : null
-        } ${
-          path && path.startsWith(`/${item.label.toLowerCase()}`)
-            ? "text-primary dark:!text-primary"
-            : null
-        } text-black hover:text-primary dark:text-white dark:hover:text-primary`}
-      >
-        {item.label}
-        {item.submenu && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1.5em"
-            height="1.5em"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="m7 10l5 5l5-5"
-            />
-          </svg>
-        )}
-      </Link>
+      {item.external ? (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`text-base flex font-normal  text-black hover:text-primary dark:text-white dark:hover:text-primary  ${
+            item.href === path ? "!text-primary dark:!text-primary" : null
+          } ${
+            path && path.startsWith(`/${item.label.toLowerCase()}`)
+              ? "text-primary dark:!text-primary"
+              : null
+          } text-black hover:text-primary dark:text-white dark:hover:text-primary`}
+        >
+          {item.label}
+        </a>
+      ) : (
+        <Link
+          href={item.href}
+          className={`text-base flex font-normal  text-black hover:text-primary dark:text-white dark:hover:text-primary  ${
+            item.href === path ? "!text-primary dark:!text-primary" : null
+          } ${
+            path && path.startsWith(`/${item.label.toLowerCase()}`)
+              ? "text-primary dark:!text-primary"
+              : null
+          } text-black hover:text-primary dark:text-white dark:hover:text-primary`}
+        >
+          {item.label}
+          {item.submenu && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="m7 10l5 5l5-5"
+              />
+            </svg>
+          )}
+        </Link>
+      )}
       {submenuOpen && (
         <ul className="absolute py-2 left-0 mt-0.5 w-60 bg-white shadow-lg rounded-lg">
           {item.submenu?.map((subItem, index) => (
