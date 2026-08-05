@@ -1,6 +1,7 @@
 import HeroSub from "@/app/components/SharedComponent/HeroSub";
 import CorporateTrainings from "@/app/components/Home/CorporateTrainings";
 import IndividualTrainings from "@/app/components/Home/IndividualTrainings";
+import SelectionPlacement from "@/app/components/Home/SelectionPlacement";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,11 +17,12 @@ const page = () => {
     <>
       <HeroSub
         title="Hizmetlerimiz"
-        description="Kurumsal ve bireysel eğitim çözümlerimiz sizin ve ekibinizin gelişimi için tasarlanmış programlardır."
+        description="Kurumsal eğitimler, bireysel eğitimler ve seçme-yerleştirme desteğimiz; sizin ve ekibinizin gelişimi için tasarlanmış programlardır."
         breadcrumbLinks={breadcrumbLinks}
       />
       <CorporateTrainings />
       <IndividualTrainings />
+      <SelectionPlacement />
     </>
   );
 };

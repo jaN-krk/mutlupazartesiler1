@@ -16,7 +16,7 @@ const YoutubeSection = () => {
                 <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
                   <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.8 15.5v-7l6.3 3.5-6.3 3.5Z" />
                 </svg>
-                YouTube Kanalı
+                YouTube
               </span>
 
               <h2 className="font-semibold md:text-4xl sm:text-3xl text-2xl text-black dark:text-white leading-tight mb-4">
@@ -39,24 +39,17 @@ const YoutubeSection = () => {
                   Kanala git
                 </a>
                 <a
-                  href="https://www.youtube.com/watch?v=EdxWAEGKaaU"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/basinda-biz"
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 text-sm font-semibold transition-colors"
                 >
-                  YouTube’da izle
-                  <span aria-hidden="true">↗</span>
+                  Basında Biz
+                  <span aria-hidden="true">→</span>
                 </a>
               </div>
-
-              <p className="mt-5 text-xs text-black/45 dark:text-white/45">
-                @MutluPazartesiler
-              </p>
             </div>
 
             <div className="lg:col-span-7">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/15 ring-1 ring-black/5 dark:ring-white/10">
-                <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-primary/40 via-transparent to-[#FF0000]/40 opacity-60 pointer-events-none" />
                 <div className="relative aspect-video bg-black">
                   <iframe
                     src="https://www.youtube.com/embed/EdxWAEGKaaU"

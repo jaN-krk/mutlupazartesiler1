@@ -90,20 +90,28 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 py-1 z-50 w-full bg-transparent transition-all ${sticky ? "shadow-lg bg-white dark:bg-darklight" : "shadow-none"
-        }`}
+      className={`fixed top-0 z-50 w-full transition-all duration-300 border-b ${
+        sticky
+          ? "bg-white/95 dark:bg-darklight/95 backdrop-blur-md shadow-md border-black/5 dark:border-white/10 py-0"
+          : "bg-white/90 dark:bg-darklight/90 backdrop-blur-md shadow-sm border-black/5 dark:border-white/10 py-0"
+      }`}
     >
       <div
-        className={`container mx-auto lg:max-w-xl md:max-w-screen-md flex items-center justify-between xl:gap-8 gap-6 duration-300 px-4 ${sticky ? "py-3" : "py-6"
-          }`}
+        className={`container mx-auto lg:max-w-xl md:max-w-screen-md flex items-center justify-between duration-300 px-4 ${
+          sticky ? "py-2" : "py-3"
+        }`}
       >
-        <Logo />
-        <ul className="hidden xl:flex flex-grow items-center justify-start gap-6">
-          {headerData.map((item, index) => (
-            <HeaderLink key={index} item={item} />
-          ))}
-        </ul>
-        <div className="flex items-center gap-4">
+        <div className="shrink-0">
+          <Logo />
+        </div>
+        <nav className="hidden lg:flex flex-1 justify-center px-3 xl:px-6 min-w-0">
+          <ul className="flex items-center justify-center flex-wrap gap-0.5 xl:gap-1">
+            {headerData.map((item, index) => (
+              <HeaderLink key={index} item={item} />
+            ))}
+          </ul>
+        </nav>
+        <div className="flex items-center gap-2 shrink-0">
           <button
             aria-label="Toggle theme"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -198,7 +206,7 @@ const Header: React.FC = () => {
           )}
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
-            className="block xl:hidden p-2 rounded-lg"
+            className="block lg:hidden p-2 rounded-lg"
             aria-label="Toggle mobile menu"
           >
             <span className="block w-6 h-0.5 bg-primary dark:bg-primary"></span>
@@ -212,7 +220,7 @@ const Header: React.FC = () => {
       )}
       <div
         ref={mobileMenuRef}
-        className={`xl:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-darklight shadow-lg transform transition-transform duration-300 max-w-xs ${navbarOpen ? "translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-darklight shadow-lg transform transition-transform duration-300 max-w-xs ${navbarOpen ? "translate-x-0" : "translate-x-full"
           } z-50`}
       >
         <div className="flex items-center justify-between p-4">

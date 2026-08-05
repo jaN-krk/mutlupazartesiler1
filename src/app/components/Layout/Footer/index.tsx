@@ -60,6 +60,14 @@ const Footer: FC = () => {
                   Bireysel Eğitimler
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/hizmetlerimiz#secme-yerlestirme"
+                  className="text-sm text-white/60 hover:text-primary transition-colors"
+                >
+                  Seçme ve Yerleştirme
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -69,10 +77,18 @@ const Footer: FC = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/portfolio"
+                  href="/galeri"
                   className="text-sm text-white/60 hover:text-primary transition-colors"
                 >
                   Galeri
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/basinda-biz"
+                  className="text-sm text-white/60 hover:text-primary transition-colors"
+                >
+                  Basında Biz
                 </Link>
               </li>
               <li>
@@ -134,6 +150,7 @@ const Footer: FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-primary transition-colors"
+              aria-label="Instagram"
             >
               <Icon icon="typcn:social-instagram" width="20" height="20" />
             </a>
@@ -142,8 +159,18 @@ const Footer: FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-primary transition-colors"
+              aria-label="LinkedIn"
             >
               <Icon icon="typcn:social-linkedin" width="20" height="20" />
+            </a>
+            <a
+              href="https://www.youtube.com/@MutluPazartesiler"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-primary transition-colors"
+              aria-label="YouTube"
+            >
+              <Icon icon="mdi:youtube" width="22" height="22" />
             </a>
           </div>
         </div>
