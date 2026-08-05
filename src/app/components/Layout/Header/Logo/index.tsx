@@ -8,7 +8,7 @@ const Logo: React.FC<HeaderProps> = () => {
   return (
     <Link href="/">
       <Image
-        src="/images/logo/logo.png"
+        src="/images/logo/logo.PNG"
         alt="logo"
         width={200}
         height={150}
