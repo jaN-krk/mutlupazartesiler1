@@ -1,0 +1,8 @@
+.env
+.env*.local
+.vercel-auth-temp
+.next
+node_modules
+tmp
+*.log
+*.tsbuildinfo

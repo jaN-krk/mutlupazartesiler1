@@ -94,11 +94,11 @@ const Header: React.FC = () => {
         }`}
     >
       <div
-        className={`container mx-auto lg:max-w-xl md:max-w-screen-md flex items-center justify-between  xl:gap-15 gap-10 duration-300 px-4 ${sticky ? "py-3" : "py-6"
+        className={`container mx-auto lg:max-w-xl md:max-w-screen-md flex items-center justify-between xl:gap-8 gap-6 duration-300 px-4 ${sticky ? "py-3" : "py-6"
           }`}
       >
         <Logo />
-        <ul className="hidden xl:flex flex-grow items-center justify-start gap-10 ">
+        <ul className="hidden xl:flex flex-grow items-center justify-start gap-6">
           {headerData.map((item, index) => (
             <HeaderLink key={index} item={item} />
           ))}

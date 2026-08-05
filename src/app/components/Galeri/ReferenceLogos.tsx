@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./ReferenceLogos.module.css";
+import { referenceLogos } from "@/lib/referenceLogos";
 
 const ReferenceLogos = () => {
   const [isDark, setIsDark] = useState(false);
@@ -15,63 +16,44 @@ const ReferenceLogos = () => {
     return () => mediaQuery.removeEventListener("change", handleChange as EventListener);
   }, []);
 
-  const logos = [
-    "ALOTECH.png",
-    "ATSO.png",
-    "BAIAHOTELS.png",
-    "BODTO.png",
-    "CORENDON.png",
-    "GELECEGINBILGELERI.png",
-    "KERVANSARAY.png",
-    "KOKEKUBA.png",
-    "KREMLINPALACE.png",
-    "MAVITUY.png",
-    "MEDICALPARK.png",
-    "MEDLINE.png",
-    "MIOMORE.png",
-    "MNG.png",
-    "OPTIBEATS.png",
-    "PARASUT.png",
-    "PIERRECARDIN.png",
-    "RAMADA.png",
-    "SEDUNA.png",
-    "SUNIS.png",
-    "TATILSEPETI.png",
-    "TOPKAPIPALACE.png",
-    "WHOTELS.png",
-    "XOCAPEARNNA.png",
-    "YASAMHASTANELERI.png",
-  ];
-
   return (
     <section className={styles.referenceSection} data-theme={isDark ? "dark" : "light"}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2>Birlikte Çalıştığımız Kurumlar</h2>
+          <h2>Referanslarımız</h2>
           <p>Türkiye ve bölgede güvenilen markalarla başarılı ortaklıklarımız</p>
         </div>
 
         <div className={styles.logosWrapper}>
           <div className={styles.logosTrack}>
-            {/* İlk set */}
-            {logos.map((logo, index) => (
-              <div key={`first-${index}`} className={styles.logoItem}>
+            {referenceLogos.map((logo) => (
+              <div
+                key={`first-${logo.src}`}
+                className={styles.logoItem}
+                data-size={logo.size}
+                data-tone={logo.tone}
+              >
                 <img
-                  src={`/images/refarnslar/${logo}`}
-                  alt={logo.replace(".png", "")}
-                  loading={index < 5 ? "eager" : "lazy"}
-                  onError={(e) => console.log("Logo yükleme hatası:", logo)}
+                  src={`/images/refarnslar/${logo.src}`}
+                  alt={logo.name}
+                  loading="eager"
+                  onError={() => console.log("Logo yukleme hatasi:", logo.src)}
                 />
               </div>
             ))}
-            {/* İkinci set (sonsuz scroll için) */}
-            {logos.map((logo, index) => (
-              <div key={`second-${index}`} className={styles.logoItem}>
+            {referenceLogos.map((logo) => (
+              <div
+                key={`second-${logo.src}`}
+                className={styles.logoItem}
+                data-size={logo.size}
+                data-tone={logo.tone}
+                aria-hidden="true"
+              >
                 <img
-                  src={`/images/refarnslar/${logo}`}
-                  alt={logo.replace(".png", "")}
-                  loading="lazy"
-                  onError={(e) => console.log("Logo yükleme hatası:", logo)}
+                  src={`/images/refarnslar/${logo.src}`}
+                  alt=""
+                  loading="eager"
+                  onError={() => console.log("Logo yukleme hatasi:", logo.src)}
                 />
               </div>
             ))}

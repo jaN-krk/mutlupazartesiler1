@@ -1,9 +1,11 @@
-// src/app/components/Layout/Header/Navigation/menuData.tsx
-
 export const headerData = [
   {
     label: "Galeri",
     href: "/galeri",
+  },
+  {
+    label: "Referanslarımız",
+    href: "/referanslar",
   },
   {
     label: "Hizmetlerimiz",

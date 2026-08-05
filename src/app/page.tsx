@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Hero from "@/app/components/Home/Hero";
 import ReferenceLogos from "@/app/components/Galeri/ReferenceLogos";
 import IndividualTrainings from "@/app/components/Home/IndividualTrainings";
+import YoutubeSection from "@/app/components/Home/YoutubeSection";
 import CorporateTrainings from "@/app/components/Home/CorporateTrainings";
 import TrainingOverview from "@/app/components/Home/TrainingOverview";
 // import Features from "@/app/components/Home/Features";
@@ -43,6 +44,7 @@ export default function Home() {
       <TrainingOverview />
       <CorporateTrainings />
       <IndividualTrainings />
+      <YoutubeSection />
       {/* <Features /> */}
       <ProductDoc hideHeader hideDocs images={galleryImages} />
       {/* <Plan /> */}
